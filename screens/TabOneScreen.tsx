@@ -30,6 +30,7 @@ export default function TabOneScreen() {
   console.log(theme.colors?.secondary)
   return (
     <View style={styles.container}>
+      <Text>{counter}</Text>
       <Button title="Change primary color to red" onPress={primaryToRed} style={styles.button} />
       <Button title="Change secondary color to black" onPress={secondaryToBlack} style={styles.button} />
       <View>
