@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react';
+import React, {useCallback, useState} from 'react';
 import { StyleSheet, View } from 'react-native';
 import {Button, useTheme, Text} from "react-native-elements";
 
@@ -6,6 +6,7 @@ import EditScreenInfo from '../components/EditScreenInfo';
 
 export default function TabOneScreen() {
   const { theme, updateTheme } = useTheme()
+  const [counter, setCounter] = useState(0)
 
   const primaryToRed = useCallback(() => {
     updateTheme({
@@ -13,6 +14,7 @@ export default function TabOneScreen() {
         primary: '#ff0000'
       }
     })
+    setCounter((prevState) => prevState + 1)
   }, [updateTheme])
 
   const secondaryToBlack = useCallback(() => {
@@ -21,6 +23,7 @@ export default function TabOneScreen() {
         secondary: '#000'
       }
     })
+    setCounter((prevState) => prevState + 1)
   }, [updateTheme])
 
   console.log(theme.colors?.primary)
